@@ -100,7 +100,7 @@ This project implements algorithms and concepts from the following literature:
 
 1. [Primary Reproduction] Ahmadi, F., et al. (2024). "Alzheimer's disease diagnosis by applying Shannon entropy to Ricci flow-based surface indexing and extreme gradient boosting." Computer Aided Geometric Design.
 
-2.[Geometric Deep Learning] Sharp, N., et al. (2022). "DiffusionNet: Discretization Agnostic Learning on Surfaces." ACM Transactions on Graphics (TOG).
+2. [Geometric Deep Learning] Sharp, N., et al. (2022). "DiffusionNet: Discretization Agnostic Learning on Surfaces." ACM Transactions on Graphics (TOG).
 
 3. [Spectral Geometry] Smirnov, D., & Solomon, J. (2021). "HodgeNet: Learning Spectral Geometry on Triangle Meshes." SIGGRAPH.
 
@@ -109,3 +109,4 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
