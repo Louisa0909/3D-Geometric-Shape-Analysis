@@ -18,6 +18,15 @@ The current codebase (`/src`) implements a complete pipeline for explicit geomet
 * **Curvature Analysis:** Calculation of **Gaussian Curvature**, **Mean Curvature**, and **Conformal Factors** (area distortion).
 * **Entropy-based Fingerprinting:** converting dense geometric maps into compact feature vectors using Shannon Entropy.
 
+## 💾 Data Source
+To validate the reproducibility of the algorithm, this project currently utilizes standard benchmark data provided by **FreeSurfer**:
+
+* **Source:** FreeSurfer standard subject (`bert`).
+* **Region of Interest (ROI):** Left Hemisphere Hippocampus.
+* **Preprocessing:** The original surface data was extracted from the `bert` subject and converted to `.ply` format for geometric processing using `trimesh`.
+
+> *Note: While the original paper analyzes a private ADNI dataset, this project successfully validates the geometric pipeline on standard anatomical data.*
+
 ## 📊 Reproduction Results
 I have verified the implementation by reproducing key visualizations from the original paper.
 
@@ -86,5 +95,17 @@ python main.py
 ```
 After execution, processed results will be saved in the `data/processed/` directory, and visualizations will be saved in the `assets/` directory.
 
+## 📚 References
+This project implements algorithms and concepts from the following literature:
+
+1. [Primary Reproduction] Ahmadi, F., et al. (2024). "Alzheimer's disease diagnosis by applying Shannon entropy to Ricci flow-based surface indexing and extreme gradient boosting." Computer Aided Geometric Design.
+
+2.[Geometric Deep Learning] Sharp, N., et al. (2022). "DiffusionNet: Discretization Agnostic Learning on Surfaces." ACM Transactions on Graphics (TOG).
+
+3. [Spectral Geometry] Smirnov, D., & Solomon, J. (2021). "HodgeNet: Learning Spectral Geometry on Triangle Meshes." SIGGRAPH.
+
+4. [Data Source] FreeSurfer: https://surfer.nmr.mgh.harvard.edu/
+
 ---
+
 *Created by Xiaoyu Liu*
