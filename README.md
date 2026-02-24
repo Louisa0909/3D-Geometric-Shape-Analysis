@@ -67,7 +67,7 @@ Where:
 - $M$ (Mass Matrix): Encodes local Voronoi areas.
 - $t$ (Learnable Time): Allows the network to automatically choose the "receptive field" size for each feature.
 
-👉 **[Read my Technical Notes: Laplacian in DiffusionNet](docs/laplacian_in_diffusionNet.md)**
+👉 **[Read my Technical Notes: Laplacian in DiffusionNet](docs/laplacian_in_diffusionNet.pdf)**
 
 ### 📊 SOTA Replication & Benchmarking
 
@@ -144,6 +144,7 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
 
 
