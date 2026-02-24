@@ -4,12 +4,9 @@
 > **Current Status:** 🚧 *Active Development* (Phase 1: Baseline Reproduction Completed)
 
 ## 📖 Introduction
-This project explores **Computational Geometry** techniques for 3D medical shape analysis. The primary goal is to bridge the gap between **classical geometric methods** (e.g., Conformal Geometry, Ricci Flow) and **modern geometric deep learning**.
+Traditional 3D shape diagnosis often relies on manually engineered features (e.g., Ricci Flow-based entropy). However, these methods are often sensitive to mesh resolution and noise. This project aims to benchmark Classic Conformal Geometry against State-of-the-art Geometric Deep Learning (GDL) architectures like DiffusionNet and HodgeNet.
 
-Currently, I have successfully reproduced the baseline algorithm from *Ahmadi et al. (2024)*, which utilizes **Discrete Ricci Flow** to parameterize the hippocampal surface and extracts **Shannon Entropy** features for Alzheimer's Disease diagnosis.
-
-Future iterations will focus on benchmarking this against spectral methods (HodgeNet) and diffusion-based learning (DiffusionNet).
-
+We investigate a critical question: Can learned spectral features capture the subtle anatomical deformations that classical Ricci Flow targets?
 ## 🚀 Key Features (Implemented)
 The current codebase (`/src`) implements a complete pipeline for explicit geometric feature engineering:
 
@@ -109,4 +106,5 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
