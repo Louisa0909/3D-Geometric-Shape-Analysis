@@ -7,8 +7,8 @@
 Traditional 3D shape diagnosis often relies on manually engineered features (e.g., Ricci Flow-based entropy). However, these methods are often sensitive to mesh resolution and noise. This project aims to benchmark Classic Conformal Geometry against State-of-the-art Geometric Deep Learning (GDL) architectures like DiffusionNet and HodgeNet.
 
 We investigate a critical question: Can learned spectral features capture the subtle anatomical deformations that classical Ricci Flow targets?
-## Baseline Set-up
-### 🚀 Key Features
+## 🚀 Baseline Set-up
+###  Key Features
 The current codebase (`/src`) implements a complete pipeline for explicit geometric feature engineering:
 
 * **Discrete Surface Ricci Flow:** Implemented the optimization process using Newton's method to compute the conformal factor.
@@ -41,15 +41,16 @@ I have verified the implementation by reproducing key visualizations from the or
 ### 🧠 Literature & Insights
 Unlike a simple code dump, this project is driven by a deep dive into geometric processing literature. I maintain detailed notes on the evolution from manual feature engineering to end-to-end learning.
 
-👉 **[Read my Technical Notes: From Ricci Flow to DiffusionNet](docs/classical_geometry_pipeline.md)**
+👉 **[Read my Technical Notes: Froem theory to code](docs/classical_geometry_pipeline.md)**
 
 👉 **[Read my Technical Notes: From Ricci Flow to DiffusionNet](docs/geometry_learning_notes.md)**
 
 
-## DiffusionNet
+## 🧠 DiffusionNet
 
-### 🧠 Key Observation
-Unlike fixed parameterization, DiffusionNet learns features directly on the surface by solving the Heat Equation. The core is the Diffusion Layer $h_t$, which is governed by the Laplace-Beltrami Operator $\Delta_M$:
+### Key Observation
+A key characteristic of DiffusionNet is that it learns surface features by solving the heat equation. I found this particularly interesting and therefore examined it in more detail.
+The core is the Diffusion Layer $h_t$, which is governed by the Laplace-Beltrami Operator $\Delta_M$:
 
 $$
 \frac{\partial \mathbf{u}}{\partial t} = \Delta_M \mathbf{u}
@@ -65,6 +66,8 @@ Where:
 - $L$ (Stiffness Matrix): Encodes local geometry via Cotangent Weights.
 - $M$ (Mass Matrix): Encodes local Voronoi areas.
 - $t$ (Learnable Time): Allows the network to automatically choose the "receptive field" size for each feature.
+
+👉 **[Read my Technical Notes: Laplacian in DiffusionNet](docs/laplacian_in_diffusionNet.md)**
 
 ### 📊 SOTA Replication & Benchmarking
 
@@ -141,6 +144,7 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
 
 
