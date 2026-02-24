@@ -41,7 +41,7 @@ I have verified the implementation by reproducing key visualizations from the or
 ### 🧠 Literature & Insights
 Unlike a simple code dump, this project is driven by a deep dive into geometric processing literature. I maintain detailed notes on the evolution from manual feature engineering to end-to-end learning.
 
-👉 **[Read my Technical Notes: Froem theory to code](docs/classical_geometry_pipeline.md)**
+👉 **[Read my Technical Notes: From theory to code](docs/classical_geometry_pipeline.md)**
 
 👉 **[Read my Technical Notes: From Ricci Flow to DiffusionNet](docs/geometry_learning_notes.md)**
 
@@ -144,6 +144,7 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
 
 
