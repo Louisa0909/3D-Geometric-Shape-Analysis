@@ -29,8 +29,8 @@ Comparison with original paper: The paper and README claim "DiffusionNet gets ne
 Conclusion: Successfully replicated! The experimental results are completely consistent with the performance claimed in the original paper.
 
 ### Logs
-![alt text](..\assets\replication\image-1.png)
-![alt text](..\assets\replication\image.png)
+![alt text](..\logs\image-1.png)
+![alt text](..\logs\image.png)
 
 
 ## II. 3D Human Segmentation
@@ -51,7 +51,7 @@ python human_segmentation_original.py --input_features=xyz --evaluate
 Conclusion: The dataset configuration is completely correct, and operator precomputing was successfully cached. Successfully replicated the high-precision segmentation capability of the pre-trained model provided by the original authors on this benchmark.
 
 #### Logs
-![alt text](..\assets\replication\image-2.png)
+![alt text](..\logs\image-2.png)
 ### Experiment 2 (Train from scratch):
 
 #### Command
@@ -66,7 +66,7 @@ python human_segmentation_original.py --input_features=xyz
 Replication Conclusion: Successfully replicated and completed training from scratch! The model convergence is healthy. It is worth noting that the final test accuracy of this self-trained model (90.950%) slightly exceeds the pre-trained model provided by the original authors (90.654%).
 
 #### Logs
-![alt text](..\assets\replication\image-3.png)
+![alt text](..\logs\image-3.png)
 
 ## III. Functional Correspondence
 
@@ -90,7 +90,7 @@ python functional_correspondence.py --evaluate --test_dataset=faust --input_feat
 Conclusion: Successfully replicated! The pre-computation ran smoothly. Combined with Functional Maps, the feature extractor demonstrated extremely high point-to-point matching accuracy under complex non-rigid deformations (pose changes), with errors controlled within 5%.
 
 #### Logs
-![alt text](..\assets\replication\image-4.png)
+![alt text](..\logs\image-4.png)
 
 ### Experiment 2
 
@@ -107,7 +107,7 @@ python functional_correspondence.py --train_dataset=faust --input_features=xyz
 
 Replication Conclusion: Successfully replicated! The model converged rapidly within 5 Epochs. The self-trained model has extremely excellent point-to-point matching accuracy on FAUST, and all metrics are significantly better than the baseline pre-trained weights provided in the repository.
 #### Logs
-![alt text](..\assets\replication\image-6.png)
+![alt text](..\logs\image-6.png)
 
 ## IV. RNA Segmentation (RNA-mesh-segmentation)
 ### Dataset
@@ -128,4 +128,4 @@ python rna_mesh_segmentation.py --input_features=hks
 Conclusion: Successfully replicated. The experiment proves that when facing microscopic molecular structures with drastic spatial orientation changes, using the rigid-invariant hks features in conjunction with DiffusionNet can effectively overcome the severe overfitting problems caused by xyz coordinates, achieving high-precision complex surface segmentation.
 
 ### Logs
-![alt text](..\assets\replication\image-5.png)
+![alt text](..\logs\image-5.png)
