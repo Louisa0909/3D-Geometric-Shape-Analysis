@@ -76,7 +76,11 @@ I have conducted extensive replication experiments on DiffusionNet (Sharp et al.
 │   ├── math_ops.py          # Differential Geometry Operators
 │   ├── entropy.py           # Shannon Entropy Calculation
 │   └── feature.py           # Feature Extraction Pipeline
-└── main.py                  # Entry point for the pipeline
+├── benchmarks/              # New: replication and comparative experiments
+│   ├── diffusion_net/       # DiffusionNet topic
+│       ├── logs/            # Original logs from screenshots
+│       └── replication.md   # replication report
+└── main.py                  # Entry point for the baseline pipeline
 ```
 
 ## 🗺️ Project Roadmap
@@ -89,6 +93,7 @@ This project is structured in three phases:
 
 ### Phase 2: Modern Benchmark Models (In Progress 🔄)
 - [ ] Implementation/Fine-tuning of DiffusionNet on the same dataset.
+- [ ] Implementation/Fine-tuning of HodgeNet on the same dataset.
 - [ ] Comparison of model robustness against varying mesh resolutions.
 
 ### Phase 3: Comparative Analysis
@@ -122,6 +127,7 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
 
 
