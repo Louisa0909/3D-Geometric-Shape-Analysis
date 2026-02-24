@@ -63,7 +63,7 @@ I have conducted extensive replication experiments on DiffusionNet (Sharp et al.
 - Invariance Matters: In RNA segmentation, HKS (Heat Kernel Signature) significantly outperformed XYZ coordinates by providing rotation/translation invariance for microscopic structures.
 - Training Stability: DiffusionNet shows remarkable convergence stability; my self-trained models on FAUST achieved an order of magnitude lower test loss ($0.00026$ vs $0.0025$) compared to provided weights.
 
-👉 **[Detailed Replication Report & Logs](benchmarks/diffusion_net/logs/replication.md)**
+👉 **[Detailed Replication Report & Logs](benchmarks/diffusion_net/replication.md)**
 
 ## 📂 Project Structure
 ```text
@@ -122,6 +122,7 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
 
 
