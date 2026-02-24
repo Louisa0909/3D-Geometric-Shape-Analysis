@@ -1,13 +1,14 @@
 # 3D Geometry Laboratory: From Discrete Ricci Flow to DiffusionNet & HodgeNet
 ![Banner](assets/figures_reproduced/fig6_embedding.png)
 
-> **Current Status:** 🚧 *Active Development* (Phase 1: Baseline Reproduction Completed)
+> **Current Status:** 🚀 Phase 2 in Progress (Transitioning from Discrete Ricci Flow to Diffusion-based Learning)
 
 ## 📖 Introduction
 Traditional 3D shape diagnosis often relies on manually engineered features (e.g., Ricci Flow-based entropy). However, these methods are often sensitive to mesh resolution and noise. This project aims to benchmark Classic Conformal Geometry against State-of-the-art Geometric Deep Learning (GDL) architectures like DiffusionNet and HodgeNet.
 
 We investigate a critical question: Can learned spectral features capture the subtle anatomical deformations that classical Ricci Flow targets?
-## 🚀 Key Features (Implemented)
+## Baseline Set-up
+### 🚀 Key Features
 The current codebase (`/src`) implements a complete pipeline for explicit geometric feature engineering:
 
 * **Discrete Surface Ricci Flow:** Implemented the optimization process using Newton's method to compute the conformal factor.
@@ -15,7 +16,7 @@ The current codebase (`/src`) implements a complete pipeline for explicit geomet
 * **Curvature Analysis:** Calculation of **Gaussian Curvature**, **Mean Curvature**, and **Conformal Factors** (area distortion).
 * **Entropy-based Fingerprinting:** converting dense geometric maps into compact feature vectors using Shannon Entropy.
 
-## 💾 Data Source
+### 💾 Data Source
 To validate the reproducibility of the algorithm, this project currently utilizes standard benchmark data provided by **FreeSurfer**:
 
 * **Source:** FreeSurfer standard subject (`bert`).
@@ -24,8 +25,7 @@ To validate the reproducibility of the algorithm, this project currently utilize
 
 > *Note: While the original paper analyzes a private ADNI dataset, this project successfully validates the geometric pipeline on standard anatomical data.*
 
-## 📊 Reproduction Results
-### Baseline
+### 📊 Reproduction Results
 I have verified the implementation by reproducing key visualizations from the original paper.
 
 | Conformal Factor Map | Mean Curvature Map |
@@ -41,12 +41,28 @@ I have verified the implementation by reproducing key visualizations from the or
 ### 🧠 Literature & Insights
 Unlike a simple code dump, this project is driven by a deep dive into geometric processing literature. I maintain detailed notes on the evolution from manual feature engineering to end-to-end learning.
 
-👉 **[Read my Technical Notes: From Ricci Flow to DiffusionNet](docs/geometry_learning_notes.md)**
+👉 **[Read my Technical Notes](docs/geometry_learning_notes.md)**
 
-*Topics covered in notes:*
-* *Explicit vs. Implicit Geometric Features*
-* *Why Ricci Flow is sensitive to topology*
-* *The shift towards Discretization-Agnostic Learning (DiffusionNet)*
+
+## DiffusionNet
+
+### 🧠 Key Observation
+Unlike fixed parameterization, DiffusionNet learns features directly on the surface by solving the Heat Equation. The core is the Diffusion Layer $h_t$, which is governed by the Laplace-Beltrami Operator $\Delta_M$:
+
+$$
+\frac{\partial \mathbf{u}}{\partial t} = \Delta_M \mathbf{u}
+$$
+
+In our discrete mesh implementation, we solve this via an Implicit Euler step, leading to the symmetric system:
+
+$$
+(M + tL) \mathbf{u}(t) = M \mathbf{u}(0)
+$$
+
+Where:
+- $L$ (Stiffness Matrix): Encodes local geometry via Cotangent Weights.
+- $M$ (Mass Matrix): Encodes local Voronoi areas.
+- $t$ (Learnable Time): Allows the network to automatically choose the "receptive field" size for each feature.
 
 ### 📊 SOTA Replication & Benchmarking
 
@@ -58,10 +74,6 @@ I have conducted extensive replication experiments on DiffusionNet (Sharp et al.
 | Human Seg.    | Maron17      | XYZ    | 90.95%              | 90.65%            | 🚀 Surpassed  |
 | Func. Map     | FAUST        | XYZ    | 2.59% (Err)         | 4.73% (Err)       | 🔥 Optimized  |
 | Bio-Seg.      | RNA Mesh     | HKS    | 84.44%              | ~84%              | ✅ Replicated |
-
-### 🧠 Key Observations
-- Invariance Matters: In RNA segmentation, HKS (Heat Kernel Signature) significantly outperformed XYZ coordinates by providing rotation/translation invariance for microscopic structures.
-- Training Stability: DiffusionNet shows remarkable convergence stability; my self-trained models on FAUST achieved an order of magnitude lower test loss ($0.00026$ vs $0.0025$) compared to provided weights.
 
 👉 **[Detailed Replication Report & Logs](benchmarks/diffusion_net/replication.md)**
 
@@ -127,6 +139,7 @@ This project implements algorithms and concepts from the following literature:
 ---
 
 *Created by Xiaoyu Liu*
+
 
 
 
